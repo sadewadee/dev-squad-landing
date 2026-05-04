@@ -31,31 +31,11 @@ const {
       rel="stylesheet"
     />
 
-    <!-- Scroll reveal script (lightweight IntersectionObserver) -->
-    <script is:inline>
-      // Mark JS as ready immediately so .reveal can hide for animation;
-      // without this class, .reveal stays visible (no-JS / SSR fallback).
-      document.documentElement.classList.add('js-ready');
-      document.addEventListener('DOMContentLoaded', () => {
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        const reveals = document.querySelectorAll('.reveal');
-        if (reduceMotion || !('IntersectionObserver' in window)) {
-          reveals.forEach((el) => el.classList.add('visible'));
-          return;
-        }
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.05, rootMargin: '0px 0px -40px 0px' }
-        );
-        reveals.forEach((el) => observer.observe(el));
-      });
+    <!-- Motion bundle: word stagger, scroll reveals, header state, stat
+         counters, hero parallax, hero cursor tilt. Honors
+         prefers-reduced-motion (no-ops gracefully). -->
+    <script>
+      import '../scripts/motion.ts';
     </script>
   </head>
   <body>

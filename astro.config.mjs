@@ -12,6 +12,10 @@ export default defineConfig({
   // runtime URLs that 404 in production.
   output: 'static',
 
+  // Disable Astro's in-browser dev toolbar — it gets stuck on stale optimize-deps
+  // cache after package additions and floods the console with 504s.
+  devToolbar: { enabled: false },
+
   integrations: [react()],
 
   vite: {
