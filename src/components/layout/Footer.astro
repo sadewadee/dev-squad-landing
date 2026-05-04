@@ -1,0 +1,227 @@
+---
+// Footer — 4-column nav + bottom bar
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <!-- Brand column -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="footer-logo-mark">◆</span>
+          <span class="footer-logo-name">dev-squad</span>
+        </div>
+        <p class="footer-tagline">
+          A multi-agent orchestration plugin for Claude Code.<br />
+          Eleven specialists. Nine PDCA phases. Hard quality gates by default.
+        </p>
+        <a
+          href="https://github.com/dev-squad/dev-squad#install"
+          class="footer-download"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Install plugin
+          <span class="footer-download-meta">Claude Code · v4.9.0</span>
+        </a>
+      </div>
+
+      <!-- Nav columns -->
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h5>Squad</h5>
+          <ul>
+            <li><a href="#agents">Capabilities</a></li>
+            <li><a href="#labs">Workflows</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#top">Manifesto</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Protocol</h5>
+          <ul>
+            <li><a href="https://github.com/dev-squad/dev-squad#agents" target="_blank" rel="noopener noreferrer">11 Agents</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad#phases" target="_blank" rel="noopener noreferrer">9 PDCA Phases</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad#gates" target="_blank" rel="noopener noreferrer">4 Quality Gates</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad#models" target="_blank" rel="noopener noreferrer">BYO Model</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Connect</h5>
+          <ul>
+            <li><a href="https://github.com/dev-squad/dev-squad" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad/graphs/contributors" target="_blank" rel="noopener noreferrer">Contributors</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad/releases" target="_blank" rel="noopener noreferrer">Releases</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Docs</h5>
+          <ul>
+            <li><a href="https://github.com/dev-squad/dev-squad#readme" target="_blank" rel="noopener noreferrer">Quickstart</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad/blob/main/ARCHITECTURE.md" target="_blank" rel="noopener noreferrer">Architecture</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad/blob/main/PROTOCOL.md" target="_blank" rel="noopener noreferrer">Agent Protocol</a></li>
+            <li><a href="https://github.com/dev-squad/dev-squad/blob/main/ROADMAP.md" target="_blank" rel="noopener noreferrer">Roadmap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span class="footer-status">
+        <span class="footer-dot" aria-hidden="true">●</span>
+        dev-squad · Apache-2.0 · 2026 / Volume 04 / Build Nº 9
+      </span>
+      <span class="footer-geo">Berlin / Open / Earth · 52.5200° N · 13.4050° E</span>
+      <span class="footer-heart">♥ MMXXVI · dev-squad.</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    margin-top: 60px;
+    padding-block: 60px 30px;
+    background-color: var(--paper);
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo-mark {
+    font-size: 1.125rem;
+    font-weight: 800;
+    font-family: var(--font-sans);
+    color: var(--ink);
+  }
+
+  .footer-logo-name {
+    font-size: 0.875rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    color: var(--ink);
+  }
+
+  .footer-tagline {
+    font-size: 0.8125rem;
+    color: var(--ink-mute);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-download {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .footer-download-meta {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    color: var(--ink-mute);
+    text-decoration: none;
+  }
+
+  .footer-download:hover {
+    color: var(--coral);
+  }
+
+  .footer-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  .footer-col h5 {
+    margin-bottom: 1rem;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-col a {
+    font-size: 0.8125rem;
+    color: var(--ink-mute);
+    transition: color 0.15s ease;
+  }
+
+  .footer-col a:hover {
+    color: var(--ink);
+  }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line-soft);
+  }
+
+  .footer-status,
+  .footer-geo,
+  .footer-heart {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-dot {
+    color: var(--coral);
+    margin-right: 0.25rem;
+    font-size: 0.5rem;
+  }
+
+  .footer-heart {
+    margin-left: auto;
+  }
+
+  @media (max-width: 1024px) {
+    .footer-top {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .footer-cols {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer-cols {
+      grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .footer-heart {
+      margin-left: 0;
+    }
+  }
+</style>

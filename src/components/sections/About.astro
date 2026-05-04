@@ -1,0 +1,171 @@
+---
+import { Image } from 'astro:assets';
+import aboutImg from '../../assets/about.png';
+---
+
+<section class="about section-py">
+  <div class="container about-inner">
+    <!-- Left: text -->
+    <div class="about-text">
+      <p class="section-label reveal">I. About / Manifesto · dev-squad / Volume 04</p>
+      <p class="about-counter reveal reveal-delay-1">002 / 008</p>
+
+      <h2 class="about-h2 reveal reveal-delay-1">
+        We treat your codebase as a craft, not a content farm.
+      </h2>
+
+      <p class="about-body reveal reveal-delay-2">
+        The most capable coding agents already live on your laptop. dev-squad orchestrates eleven of them through a hard-gated PDCA workflow that runs inside Claude Code, deploys via your existing CI, and stays bring-your-own-model at every layer. <code>/dev-squad build</code> takes you from idea to PR in nine phases.
+      </p>
+
+      <a
+        href="https://github.com/dev-squad/dev-squad#readme"
+        class="about-cta reveal reveal-delay-2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read our approach
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <!-- Practice block -->
+      <div class="about-practice reveal reveal-delay-3">
+        <p class="about-practice-title">Plan · Do · Check · Act · Repeat</p>
+        <p class="about-practice-sub">Squad practice · Est. MMXXVI</p>
+      </div>
+
+      <!-- Pull quote -->
+      <blockquote class="about-quote reveal reveal-delay-3">
+        From request to PR, we ship the full stack of intentional decisions. Studies in coordination · review · runtime · stability.
+        <cite>dev-squad, MMXXVI</cite>
+      </blockquote>
+    </div>
+
+    <!-- Right: image -->
+    <div class="about-image-wrap reveal reveal-delay-2">
+      <Image
+        src={aboutImg}
+        alt="dev-squad — editorial collage of agents coordinating around a shared task"
+        class="about-img img-shadow"
+        widths={[500, 800, 1000]}
+        sizes="(max-width: 900px) 100vw, 45vw"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-inner {
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-counter {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .about-body {
+    font-size: 1.0625rem;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-body code {
+    background-color: var(--paper-dark);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 0.9375rem;
+    font-family: var(--font-mono);
+    color: var(--ink-soft);
+  }
+
+  .about-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    margin-bottom: 2.5rem;
+    transition: color 0.15s ease;
+  }
+
+  .about-cta:hover {
+    color: var(--coral);
+  }
+
+  .about-practice {
+    padding: 1.25rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background-color: var(--paper-warm);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-practice-title {
+    font-family: var(--font-sans);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    margin-bottom: 0.25rem;
+  }
+
+  .about-practice-sub {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+  }
+
+  .about-quote {
+    margin: 0;
+    padding: 0 0 0 1.25rem;
+    border-left: 2px solid var(--coral);
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  .about-quote cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    font-style: normal;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+  }
+
+  .about-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .about-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .about-image-wrap {
+      order: -1;
+    }
+  }
+</style>

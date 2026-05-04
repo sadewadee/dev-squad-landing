@@ -1,0 +1,161 @@
+---
+import { Image } from 'astro:assets';
+import capabilitiesImg from '../../assets/capabilities.png';
+import { capabilities } from '../../data/capabilities';
+---
+
+<section id="agents" class="capabilities section-py">
+  <div class="container">
+    <!-- Header -->
+    <div class="cap-header reveal">
+      <p class="section-label">II. Capabilities · Agents · Phases · Gates · 4 pillars / 1 loop</p>
+      <p class="cap-counter">003 / 008</p>
+    </div>
+
+    <div class="cap-inner">
+      <!-- Left: cards -->
+      <div class="cap-left">
+        <h2 class="cap-h2 reveal">Eleven agents, nine phases, four gates, one shipping loop.</h2>
+        <p class="cap-intro reveal reveal-delay-1">
+          We blend opus-grade planning with sonnet specialists to ship interfaces, schemas, and pull requests that hold up to threat models, runtime QA, and stability hammers.
+        </p>
+
+        <div class="cap-cards">
+          {capabilities.map((cap, i) => (
+            <div class={`cap-card reveal reveal-delay-${i + 1}`}>
+              <div class="cap-card-number">{cap.number}</div>
+              <div class="cap-card-content">
+                <p class="cap-card-tag section-label">{cap.title}</p>
+                <h3 class="cap-card-title">{cap.subtitle}</h3>
+                <p class="cap-card-desc">{cap.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Right: image -->
+      <div class="cap-image-wrap reveal reveal-delay-2">
+        <Image
+          src={capabilitiesImg}
+          alt="dev-squad capabilities — agents, phases, gates, and BYO-model architecture visualization"
+          class="cap-img img-shadow"
+          widths={[500, 800, 1000]}
+          sizes="(max-width: 900px) 100vw, 42vw"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .cap-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .cap-counter {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+  }
+
+  .cap-inner {
+    display: grid;
+    grid-template-columns: 52fr 48fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .cap-h2 {
+    margin-bottom: 1.25rem;
+  }
+
+  .cap-intro {
+    font-size: 1.0625rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin-bottom: 2.5rem;
+  }
+
+  .cap-cards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cap-card {
+    display: flex;
+    gap: 1.5rem;
+    padding-block: 1.25rem;
+    border-bottom: 1px solid var(--line-soft);
+    transition: background-color 0.15s ease;
+  }
+
+  .cap-card:last-child {
+    border-bottom: none;
+  }
+
+  .cap-card:hover {
+    background-color: var(--paper-warm);
+    margin-inline: -1rem;
+    padding-inline: 1rem;
+    border-radius: 4px;
+  }
+
+  .cap-card-number {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    flex-shrink: 0;
+    padding-top: 2px;
+    min-width: 20px;
+  }
+
+  .cap-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .cap-card-tag {
+    margin-bottom: 0.125rem;
+  }
+
+  .cap-card-title {
+    margin-bottom: 0.375rem;
+  }
+
+  .cap-card-desc {
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+    line-height: 1.6;
+  }
+
+  .cap-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    position: sticky;
+    top: 120px;
+    display: block;
+  }
+
+  @media (max-width: 900px) {
+    .cap-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .cap-image-wrap {
+      order: -1;
+    }
+    .cap-img {
+      position: static;
+    }
+  }
+</style>

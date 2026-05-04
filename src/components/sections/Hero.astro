@@ -1,0 +1,266 @@
+---
+import { Image } from 'astro:assets';
+import heroImg from '../../assets/hero.png';
+---
+
+<section id="top" class="hero section-py">
+  <div class="container hero-inner">
+    <!-- Left column: text -->
+    <div class="hero-text">
+      <p class="hero-eyebrow section-label">Multi-agent orchestration · Nº 01</p>
+
+      <h1 class="hero-h1">
+        Eleven agents. Nine phases. One PR worth shipping.
+      </h1>
+
+      <p class="hero-sub">
+        dev-squad orchestrates eleven specialist agents inside Claude Code — coordinator, architect, designer, backend, frontend, reviewer, qa-engineer, auditor, devops, git-ops, writer — through a hard-gated PDCA workflow that refuses AI-slop UI and 500-leak APIs by default.
+      </p>
+
+      <!-- CTA row -->
+      <div class="hero-ctas">
+        <a
+          href="https://github.com/dev-squad/dev-squad"
+          class="pill-btn pill-filled"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+          </svg>
+          Star on GitHub
+        </a>
+        <a
+          href="https://github.com/dev-squad/dev-squad#install"
+          class="pill-btn pill-outlined"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Install plugin
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">11</span>
+          <span class="stat-label">specialist agents</span>
+        </div>
+        <span class="stat-sep" aria-hidden="true">·</span>
+        <div class="stat">
+          <span class="stat-num">9</span>
+          <span class="stat-label">PDCA phases</span>
+        </div>
+        <span class="stat-sep" aria-hidden="true">·</span>
+        <div class="stat">
+          <span class="stat-num">21</span>
+          <span class="stat-label">max parallel</span>
+        </div>
+        <span class="stat-sep" aria-hidden="true">·</span>
+        <div class="stat">
+          <span class="stat-label">BYO model</span>
+        </div>
+      </div>
+
+      <!-- Command hint -->
+      <p class="hero-cmd">
+        <span class="hero-cmd-arrow" aria-hidden="true">↳</span>
+        <code>/dev-squad build</code>
+        <span class="hero-cmd-dot" aria-hidden="true">·</span>
+        one command, nine phases
+      </p>
+
+      <!-- Coordinates -->
+      <p class="hero-coords">52.5200° N · 13.4050° E</p>
+    </div>
+
+    <!-- Right column: image -->
+    <div class="hero-image-wrap">
+      <Image
+        src={heroImg}
+        alt="dev-squad editorial collage — agents, phases, and quality gates"
+        class="hero-img"
+        loading="eager"
+        widths={[600, 900, 1200]}
+        sizes="(max-width: 768px) 100vw, 45vw"
+      />
+      <div class="hero-caption" aria-hidden="true">
+        <span class="hero-caption-fig">FIG. 01 / DS-26 Build Nº 9</span>
+        <span class="hero-caption-meta">SHA · a1b2c3d · Composed by dev-squad</span>
+        <div class="hero-steps">
+          <span>01 Plan</span>
+          <span>02 Do</span>
+          <span>03 Check</span>
+          <span>04 Act</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: 80px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-h1 {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-sub {
+    font-size: 1.0625rem;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--line-soft);
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+
+  .stat-num {
+    font-family: var(--font-sans);
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.6875rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+  }
+
+  .stat-sep {
+    color: var(--line);
+    font-size: 1rem;
+  }
+
+  .hero-cmd {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--ink-mute);
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-cmd code {
+    background-color: var(--paper-dark);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8125rem;
+    color: var(--ink-soft);
+  }
+
+  .hero-cmd-arrow {
+    color: var(--coral);
+    font-size: 1rem;
+  }
+
+  .hero-cmd-dot {
+    color: var(--ink-faint);
+  }
+
+  .hero-coords {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    font-family: var(--font-mono);
+  }
+
+  /* Right column */
+  .hero-image-wrap {
+    position: relative;
+  }
+
+  .hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+  }
+
+  .hero-caption {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .hero-caption-fig,
+  .hero-caption-meta {
+    font-size: 0.625rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.08em;
+    font-family: var(--font-mono);
+  }
+
+  .hero-steps {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-steps span {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-family: var(--font-sans);
+  }
+
+  @media (max-width: 900px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .hero-sub {
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      padding-top: 48px;
+    }
+    .hero-stats {
+      gap: 0.5rem;
+    }
+  }
+</style>

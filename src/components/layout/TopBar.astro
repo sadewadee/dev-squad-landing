@@ -1,0 +1,110 @@
+---
+// TopBar — fixed announcement bar at the very top
+---
+
+<div class="topbar" role="banner">
+  <div class="topbar-inner container">
+    <div class="topbar-left">
+      <span class="topbar-seg">DS / 2026 · Vol. 04 / Build Nº 9</span>
+      <span class="topbar-dot" aria-hidden="true">·</span>
+      <span class="topbar-seg topbar-hide-sm">Filed under Agents · Orchestration</span>
+      <span class="topbar-dot topbar-hide-sm" aria-hidden="true">·</span>
+      <span class="topbar-seg topbar-hide-sm">Apache-2.0 · Made on Earth</span>
+      <span class="topbar-dot topbar-hide-sm" aria-hidden="true">·</span>
+      <span class="topbar-seg">
+        <span class="topbar-live-dot" aria-hidden="true">●</span>
+        Live · v4.9.0
+      </span>
+    </div>
+    <div class="topbar-right">
+      <a href="https://github.com/dev-squad/dev-squad" class="topbar-lang" target="_blank" rel="noopener noreferrer">EN</a>
+      <span class="topbar-sep" aria-hidden="true">·</span>
+      <a href="https://github.com/dev-squad/dev-squad" class="topbar-lang" target="_blank" rel="noopener noreferrer">DE</a>
+      <span class="topbar-sep" aria-hidden="true">·</span>
+      <a href="https://github.com/dev-squad/dev-squad" class="topbar-lang" target="_blank" rel="noopener noreferrer">中文</a>
+      <span class="topbar-sep" aria-hidden="true">·</span>
+      <a href="https://github.com/dev-squad/dev-squad" class="topbar-lang" target="_blank" rel="noopener noreferrer">日本語</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 36px;
+    background-color: var(--paper-warm);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+  }
+
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .topbar-seg {
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    white-space: nowrap;
+  }
+
+  .topbar-dot {
+    color: var(--ink-faint);
+    font-size: 0.625rem;
+  }
+
+  .topbar-live-dot {
+    color: var(--coral);
+    font-size: 0.5rem;
+    margin-right: 0.25rem;
+  }
+
+  .topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .topbar-lang {
+    font-size: 0.625rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--ink-mute);
+    transition: color 0.15s ease;
+  }
+
+  .topbar-lang:hover {
+    color: var(--ink);
+  }
+
+  .topbar-sep {
+    color: var(--ink-faint);
+    font-size: 0.625rem;
+  }
+
+  @media (max-width: 640px) {
+    .topbar-hide-sm {
+      display: none;
+    }
+    .topbar-dot:nth-child(4),
+    .topbar-dot:nth-child(6) {
+      display: none;
+    }
+  }
+</style>

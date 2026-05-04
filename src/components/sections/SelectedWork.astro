@@ -1,0 +1,183 @@
+---
+import { Image } from 'astro:assets';
+import work1 from '../../assets/work-1.png';
+import work2 from '../../assets/work-2.png';
+---
+
+<section class="work section-py-tight">
+  <div class="container">
+    <!-- Header -->
+    <div class="work-header reveal">
+      <div>
+        <p class="section-label">V. Selected Work · 2026 Catalog · Edited by dev-squad</p>
+        <p class="work-counter">006 / 008</p>
+      </div>
+    </div>
+
+    <h2 class="work-h2 reveal">Pillars that turn briefs into PRs that survive review.</h2>
+
+    <div class="work-grid">
+      <!-- Featured pillar -->
+      <a
+        href="https://github.com/dev-squad/dev-squad#design-gate"
+        class="work-card card reveal"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="work-card-image-wrap">
+          <Image
+            src={work1}
+            alt="Phase 3.5 anti-AI-slop design gate — tokens, visual spec, component inventory, responsive spec"
+            class="work-card-img"
+            widths={[500, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-meta">
+            <span class="tag-badge">ANTI-SLOP GATE</span>
+            <span class="work-card-index">Featured pillar 01 / 04</span>
+          </div>
+          <h4 class="work-card-name">Phase 3.5 Design Gate</h4>
+          <p class="work-card-desc">
+            Designer produces four blocking artifacts before frontend codes a line of UI. Tokens extracted from real references via WebSearch, grep-github, and playwright. Veto on emoji-as-icon, default shadcn slate, missing responsive.
+          </p>
+          <span class="work-card-year">2026</span>
+        </div>
+      </a>
+
+      <!-- Companion pillar -->
+      <a
+        href="https://github.com/dev-squad/dev-squad#review"
+        class="work-card card reveal reveal-delay-1"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div class="work-card-image-wrap">
+          <Image
+            src={work2}
+            alt="Phase 5 triangulated review — reviewer, qa-engineer, auditor in parallel"
+            class="work-card-img"
+            widths={[500, 800]}
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-meta">
+            <span class="tag-badge">PARALLEL REVIEW</span>
+            <span class="work-card-index">Companion pillar 03 / 04</span>
+          </div>
+          <h4 class="work-card-name">Phase 5 Triangulated Review</h4>
+          <p class="work-card-desc">
+            Reviewer (static + security), qa-engineer (runtime + Visual Gate), and auditor (stability + quality metrics) dispatched in parallel via diff-scope heuristic. Confidence-scored findings. P0-P1 must clear before merge.
+          </p>
+          <span class="work-card-year">2026</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .work-header {
+    margin-bottom: 0.75rem;
+  }
+
+  .work-counter {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+  }
+
+  .work-h2 {
+    margin-bottom: 2.5rem;
+    max-width: 640px;
+  }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .work-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+  }
+
+  .work-card-image-wrap {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background-color: var(--paper-warm);
+    border-radius: 8px 8px 0 0;
+  }
+
+  .work-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .work-card:hover .work-card-img {
+    transform: scale(1.03);
+  }
+
+  .work-card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    background-color: var(--paper);
+    border-top: none;
+  }
+
+  .work-card-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .work-card-index {
+    font-size: 0.625rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    margin-left: auto;
+  }
+
+  .work-card-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    margin: 0;
+  }
+
+  .work-card-desc {
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+    line-height: 1.65;
+    margin: 0;
+    flex: 1;
+  }
+
+  .work-card-year {
+    font-size: 0.625rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .work-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

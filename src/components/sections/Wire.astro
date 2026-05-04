@@ -1,0 +1,75 @@
+---
+// Wire — scrolling agent/phase ticker
+const roster = [
+  'Coordinator (opus)', 'Architect (opus)', 'Designer (sonnet · think_harder)', 'Backend (sonnet)',
+  'Frontend (sonnet)', 'Reviewer (sonnet)', 'QA-Engineer (sonnet)', 'Auditor (sonnet)',
+  'DevOps (sonnet)', 'Git-Ops (sonnet)', 'Writer (sonnet)',
+  'Phase 0 Ultraplan', 'Phase 1 Discover', 'Phase 2 Design', 'Phase 3 Scaffold',
+  'Phase 3.5 Design Gate', 'Phase 4 Implement', 'Phase 5 Review', 'Phase 6 Ship', 'Phase 7 Retrospective',
+];
+
+const tickerText = `In motion · 11 agents · 9 PDCA phases · ${roster.join(' · ')}`;
+---
+
+<section class="wire" aria-label="Squad activity ticker">
+  <div class="wire-inner">
+    <span class="wire-label" aria-hidden="true">Squad in motion</span>
+    <div class="wire-track-wrap" aria-hidden="true">
+      <div class="marquee-track" role="marquee">
+        <span class="wire-text">{tickerText}&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+        <span class="wire-text">{tickerText}&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .wire {
+    padding-block: 26px 28px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    background-color: var(--paper);
+  }
+
+  .wire-inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding-inline: 64px;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .wire-label {
+    font-size: 0.625rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .wire-track-wrap {
+    overflow: hidden;
+    flex: 1;
+  }
+
+  .wire-text {
+    font-size: 0.75rem;
+    color: var(--ink-mute);
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    padding-right: 0;
+  }
+
+  @media (max-width: 768px) {
+    .wire-inner {
+      padding-inline: 24px;
+    }
+    .wire-text {
+      font-size: 0.6875rem;
+    }
+  }
+</style>

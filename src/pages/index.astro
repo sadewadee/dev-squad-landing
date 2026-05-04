@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TopBar from '../components/layout/TopBar.astro';
+import SideRails from '../components/layout/SideRails.astro';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/sections/Hero.astro';
+import Wire from '../components/sections/Wire.astro';
+import About from '../components/sections/About.astro';
+import Capabilities from '../components/sections/Capabilities.astro';
+import Labs from '../components/sections/Labs.astro';
+import Method from '../components/sections/Method.astro';
+import SelectedWork from '../components/sections/SelectedWork.astro';
+import Testimonial from '../components/sections/Testimonial.astro';
+import CTASection from '../components/sections/CTASection.astro';
+---
+
+<BaseLayout
+  title="dev-squad — eleven agents, nine PDCA phases, one PR worth shipping."
+  description="A multi-agent orchestration plugin for Claude Code. Eleven specialist agents run a nine-phase PDCA workflow with hard quality gates: anti-AI-slop design, runtime QA, stability auditing. Apache-2.0."
+>
+  <TopBar />
+  <SideRails />
+  <Header />
+
+  <main id="main-content">
+    <Hero />
+    <Wire />
+    <About />
+    <Capabilities />
+    <Labs />
+    <Method />
+    <SelectedWork />
+    <Testimonial />
+    <CTASection />
+  </main>
+
+  <Footer />
+</BaseLayout>

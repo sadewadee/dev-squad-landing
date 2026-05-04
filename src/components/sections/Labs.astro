@@ -1,0 +1,73 @@
+---
+import { labs } from '../../data/labs';
+import LabsFilter from '../islands/LabsFilter';
+---
+
+<section id="labs" class="labs section-py">
+  <div class="container">
+    <!-- Header -->
+    <div class="labs-header reveal">
+      <div>
+        <p class="section-label">III. Workflows / Dispatch Catalog · 05 ongoing</p>
+        <p class="labs-counter">004 / 008</p>
+      </div>
+    </div>
+
+    <h2 class="labs-h2 reveal">A living archive of dispatchable workflows — built from how real teams ship.</h2>
+
+    <p class="labs-intro reveal reveal-delay-1">
+      <span class="labs-count-badge">05</span>
+      Composable slash commands triggered solo or chained under <code>/dev-squad build</code>.
+    </p>
+
+    <!-- React island for filter + cards -->
+    <LabsFilter labs={labs} client:load />
+  </div>
+</section>
+
+<style>
+  .labs-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+
+  .labs-counter {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+  }
+
+  .labs-h2 {
+    margin-bottom: 1.25rem;
+    max-width: 700px;
+  }
+
+  .labs-intro {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .labs-count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--ink);
+    color: var(--paper);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    font-family: var(--font-sans);
+    flex-shrink: 0;
+  }
+</style>

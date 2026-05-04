@@ -1,0 +1,219 @@
+---
+import { Image } from 'astro:assets';
+import { methodSteps } from '../../data/method';
+
+// Import method images
+import method1 from '../../assets/method-1.png';
+import method2 from '../../assets/method-2.png';
+import method3 from '../../assets/method-3.png';
+import method4 from '../../assets/method-4.png';
+
+const images = [method1, method2, method3, method4];
+---
+
+<section id="method" class="method section-py">
+  <div class="container">
+    <!-- Header -->
+    <div class="method-header reveal">
+      <p class="section-label">IV. Method / PDCA Loop · 04 stages, iterative</p>
+      <p class="method-counter">005 / 008</p>
+    </div>
+
+    <div class="method-top reveal">
+      <h2 class="method-h2">From request to PR, in four moves.</h2>
+      <p class="method-intro">
+        <span class="method-plus" aria-hidden="true">+</span>
+        Plan · Do · Check · Act — every stage produces an artifact, every artifact is verifiable.
+      </p>
+    </div>
+
+    <!-- Steps -->
+    <div class="method-steps">
+      {methodSteps.map((step, i) => (
+        <div class={`method-step reveal reveal-delay-${i + 1}`}>
+          <div class="method-step-text">
+            <span class="method-step-num" aria-hidden="true">{step.number}</span>
+            <div class="method-step-content">
+              <h3 class="method-step-title">
+                <span class="method-arrow" aria-hidden="true">→</span>
+                {step.title}
+              </h3>
+              <p class="method-step-desc">{step.description}</p>
+            </div>
+          </div>
+          <div class="method-step-image-wrap">
+            <Image
+              src={images[i]}
+              alt={`Method step ${step.number}: ${step.title}`}
+              class="method-step-img img-shadow"
+              widths={[400, 700, 900]}
+              sizes="(max-width: 900px) 100vw, 42vw"
+            />
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Footer note -->
+    <div class="method-footnote reveal">
+      <p>Phases inform everything. Gates make it stick.</p>
+      <a href="https://github.com/dev-squad/dev-squad" target="_blank" rel="noopener noreferrer" class="method-footnote-link">
+        github.com/dev-squad/dev-squad · Apache-2.0
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .method-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .method-counter {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+  }
+
+  .method-top {
+    margin-bottom: 3rem;
+  }
+
+  .method-h2 {
+    margin-bottom: 1rem;
+  }
+
+  .method-intro {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 1.0625rem;
+    color: var(--ink-mute);
+    line-height: 1.65;
+    max-width: 560px;
+  }
+
+  .method-plus {
+    color: var(--coral);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.4;
+    flex-shrink: 0;
+  }
+
+  .method-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+  }
+
+  .method-step {
+    display: grid;
+    grid-template-columns: 45fr 55fr;
+    gap: 4rem;
+    align-items: center;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid var(--line-faint);
+  }
+
+  .method-step:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .method-step-text {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .method-step-num {
+    font-size: 3.5rem;
+    font-weight: 800;
+    font-family: var(--font-sans);
+    color: var(--paper-dark);
+    line-height: 1;
+    flex-shrink: 0;
+    letter-spacing: -0.04em;
+  }
+
+  .method-step-content {
+    flex: 1;
+  }
+
+  .method-step-title {
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .method-arrow {
+    color: var(--coral);
+    font-size: 1.125rem;
+  }
+
+  .method-step-desc {
+    font-size: 0.9375rem;
+    color: var(--ink-mute);
+    line-height: 1.7;
+  }
+
+  .method-step-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .method-footnote {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line-soft);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.8125rem;
+    color: var(--ink-mute);
+  }
+
+  .method-footnote-link {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    transition: color 0.15s ease;
+  }
+
+  .method-footnote-link:hover {
+    color: var(--ink);
+  }
+
+  @media (max-width: 900px) {
+    .method-step {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    .method-step-image-wrap {
+      order: -1;
+    }
+    .method-steps {
+      gap: 3rem;
+    }
+    .method-step {
+      gap: 2rem;
+      padding-bottom: 3rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .method-step-num {
+      font-size: 2.5rem;
+    }
+  }
+</style>

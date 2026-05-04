@@ -1,0 +1,207 @@
+---
+import { Image } from 'astro:assets';
+import testimonialImg from '../../assets/testimonial.png';
+---
+
+<section class="testimonial section-py">
+  <div class="container testimonial-inner">
+    <!-- Left: quote + lineage -->
+    <div class="testimonial-text">
+      <p class="section-label reveal">VI. Collaborators / Lineage · Standing on shoulders</p>
+      <p class="testimonial-counter reveal">007 / 008</p>
+
+      <blockquote class="testimonial-quote reveal reveal-delay-1">
+        <span class="testimonial-open-quote" aria-hidden="true">"</span>
+        Most agent frameworks ship a single agent that hopes for the best. dev-squad ships eleven that argue with each other until the code is right.
+        <cite class="testimonial-cite">
+          S.K. — Staff Engineer · Lineage of opinionated tooling
+        </cite>
+      </blockquote>
+
+      <div class="testimonial-divider reveal reveal-delay-2" aria-hidden="true"></div>
+
+      <p class="testimonial-lineage-label section-label reveal reveal-delay-2">Standing on the shoulders of teams shipping opinionated dev tooling.</p>
+
+      <ul class="testimonial-lineage reveal reveal-delay-3" aria-label="Tooling lineage">
+        <li class="lineage-item">
+          <span class="lineage-name">Claude Code</span>
+          <span class="lineage-role">Harness</span>
+        </li>
+        <li class="lineage-item">
+          <span class="lineage-name">Aider</span>
+          <span class="lineage-role">Pair coding</span>
+        </li>
+        <li class="lineage-item">
+          <span class="lineage-name">Cline</span>
+          <span class="lineage-role">Orchestration</span>
+        </li>
+        <li class="lineage-item">
+          <span class="lineage-name">Codex CLI</span>
+          <span class="lineage-role">Agentic</span>
+        </li>
+        <li class="lineage-item">
+          <span class="lineage-name">Continue</span>
+          <span class="lineage-role">Patterns</span>
+        </li>
+      </ul>
+
+      <a
+        href="https://github.com/dev-squad/dev-squad/discussions"
+        class="testimonial-cta reveal reveal-delay-3"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read more stories
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Right: image -->
+    <div class="testimonial-image-wrap reveal reveal-delay-2">
+      <Image
+        src={testimonialImg}
+        alt="dev-squad collaborators — agents in coordinated motion"
+        class="testimonial-img img-shadow"
+        widths={[500, 800, 1000]}
+        sizes="(max-width: 900px) 100vw, 45vw"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonial-inner {
+    display: grid;
+    grid-template-columns: 50fr 50fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .testimonial-counter {
+    font-size: 0.6875rem;
+    color: var(--ink-faint);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    margin-top: 0.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-quote {
+    margin: 0 0 2rem 0;
+    padding: 0;
+    position: relative;
+  }
+
+  .testimonial-open-quote {
+    display: block;
+    font-size: 5rem;
+    line-height: 0.7;
+    color: var(--coral);
+    font-family: var(--font-serif);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+
+  .testimonial-quote p,
+  .testimonial-quote {
+    font-size: clamp(1.125rem, 2vw, 1.375rem);
+    font-weight: 600;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    line-height: 1.45;
+    letter-spacing: -0.015em;
+  }
+
+  .testimonial-cite {
+    display: block;
+    margin-top: 1rem;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--ink-mute);
+    letter-spacing: 0.02em;
+  }
+
+  .testimonial-divider {
+    height: 1px;
+    background-color: var(--line);
+    margin-block: 1.75rem;
+  }
+
+  .testimonial-lineage-label {
+    margin-bottom: 0.75rem;
+  }
+
+  .testimonial-lineage {
+    list-style: none;
+    margin: 0 0 2rem 0;
+    padding: 0;
+  }
+
+  .lineage-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding-block: 0.625rem;
+    border-bottom: 1px solid var(--line-soft);
+  }
+
+  .lineage-item:last-child {
+    border-bottom: none;
+  }
+
+  .lineage-name {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    color: var(--ink-soft);
+  }
+
+  .lineage-role {
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .testimonial-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: var(--font-sans);
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color 0.15s ease;
+  }
+
+  .testimonial-cta:hover {
+    color: var(--coral);
+  }
+
+  .testimonial-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    position: sticky;
+    top: 120px;
+  }
+
+  @media (max-width: 900px) {
+    .testimonial-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    .testimonial-image-wrap {
+      order: -1;
+    }
+    .testimonial-img {
+      position: static;
+    }
+  }
+</style>
