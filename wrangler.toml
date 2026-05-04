@@ -1,7 +1,7 @@
 # Cloudflare Workers Static Assets config — pure static site, no Worker code.
 # This serves dist/ as static files at the edge, identical UX to Cloudflare Pages.
 
-name = "dev-squad-landing"
+name = "dev-squad"
 compatibility_date = "2024-12-30"
 
 [assets]
