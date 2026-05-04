@@ -52,7 +52,7 @@ export default function LabsFilter({ labs }: Props) {
         <div className="labs-empty">
           <p>More workflows and gates documented on GitHub</p>
           <a
-            href="https://github.com/dev-squad/dev-squad"
+            href="https://github.com/sadewadee/dev-squad-plugin"
             target="_blank"
             rel="noopener noreferrer"
             className="pill-btn pill-outlined"
@@ -65,7 +65,7 @@ export default function LabsFilter({ labs }: Props) {
           {visibleLabs.map((lab) => (
             <a
               key={lab.number}
-              href="https://github.com/dev-squad/dev-squad"
+              href="https://github.com/sadewadee/dev-squad-plugin"
               target="_blank"
               rel="noopener noreferrer"
               className="lab-card card"
@@ -97,7 +97,7 @@ export default function LabsFilter({ labs }: Props) {
       {/* Footer link */}
       <div className="labs-footer">
         <a
-          href="https://github.com/dev-squad/dev-squad"
+          href="https://github.com/sadewadee/dev-squad-plugin"
           target="_blank"
           rel="noopener noreferrer"
           className="labs-footer-link"
