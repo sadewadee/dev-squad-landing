@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import heroImg from '../../assets/hero.png';
+import heroImg from '../../assets/hero.jpeg';
 ---
 
 <section id="top" class="hero section-py">
@@ -76,14 +76,16 @@ import heroImg from '../../assets/hero.png';
 
     <!-- Right column: image -->
     <div class="hero-image-wrap">
-      <Image
-        src={heroImg}
-        alt="dev-squad editorial collage — agents, phases, and quality gates"
-        class="hero-img"
-        loading="eager"
-        widths={[600, 900, 1200]}
-        sizes="(max-width: 768px) 100vw, 45vw"
-      />
+      <div class="hero-img-frame">
+        <Image
+          src={heroImg}
+          alt="dev-squad editorial collage — agents, phases, and quality gates"
+          class="hero-img"
+          loading="eager"
+          widths={[600, 900, 1200]}
+          sizes="(max-width: 768px) 100vw, 45vw"
+        />
+      </div>
       <div class="hero-caption" aria-hidden="true">
         <span class="hero-caption-fig">FIG. 01 / DS-26 Build Nº 9</span>
         <span class="hero-caption-meta">SHA · a1b2c3d · Composed by dev-squad</span>

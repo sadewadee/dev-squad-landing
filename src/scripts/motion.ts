@@ -12,14 +12,17 @@ const html = document.documentElement;
 //    Without this class, .reveal stays visible (no-JS fallback).
 if (!reduceMotion) html.classList.add('js-ready');
 
-// ─── 2. Hero H1 word stagger ──────────────────────────────────────────────
+// ─── 2. Hero H1 line-mask reveal (each word rises from below a clip mask)
 function setupWordStagger() {
   const h1 = document.querySelector('.hero-h1');
   if (!h1 || reduceMotion) return;
   const text = h1.textContent ?? '';
   const words = text.trim().split(/\s+/);
   h1.innerHTML = words
-    .map((w, i) => `<span class="word" style="--word-i:${i}">${w}</span>`)
+    .map(
+      (w, i) =>
+        `<span class="word-mask"><span class="word-inner" style="--word-i:${i}">${w}</span></span>`
+    )
     .join(' ');
 }
 
@@ -89,6 +92,11 @@ function setupStatCounters() {
           onUpdate: (latest: number) => {
             el.textContent = String(Math.round(latest));
           },
+          onComplete: () => {
+            // Coral pulse on completion — small visual reward
+            el.classList.add('counter-done');
+            setTimeout(() => el.classList.remove('counter-done'), 600);
+          },
         });
         observer.unobserve(el);
       });
@@ -96,6 +104,33 @@ function setupStatCounters() {
     { threshold: 0.5 }
   );
   counters.forEach((el) => observer.observe(el));
+}
+
+// ─── 8. H2 coral underline draw-in (per-section editorial accent) ─────────
+function setupH2Underlines() {
+  const h2s = document.querySelectorAll<HTMLHeadingElement>('h2');
+  h2s.forEach((h2) => {
+    if (h2.querySelector('.h2-line')) return;
+    const line = document.createElement('span');
+    line.className = 'h2-line';
+    h2.appendChild(line);
+  });
+  if (reduceMotion) {
+    document.querySelectorAll('.h2-line').forEach((l) => l.classList.add('drawn'));
+    return;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const line = entry.target.querySelector('.h2-line');
+        if (line) line.classList.add('drawn');
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.4 }
+  );
+  h2s.forEach((h2) => observer.observe(h2));
 }
 
 // ─── 6. Hero image parallax (subtle translateY on scroll) ─────────────────
@@ -168,6 +203,7 @@ function init() {
   setupStatCounters();
   setupHeroParallax();
   setupHeroCursorTilt();
+  setupH2Underlines();
 }
 
 if (document.readyState === 'loading') {

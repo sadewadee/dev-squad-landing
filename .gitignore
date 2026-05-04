@@ -26,4 +26,14 @@ pnpm-debug.log*
 # playwright debug screenshots (kept out of repo)
 clone-*.png
 devsquad-*.png
+motion-*.png
+stunning-*.png
+final-*.png
 .playwright-mcp/
+
+# image-generation tooling and previews (kept locally for re-runs)
+.gen-preview/
+
+# local env (API keys etc)
+.env
+.env.local
